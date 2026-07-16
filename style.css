@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
-:root{
+:root {
     --red-color: rgb(223, 1, 1);
 }
 
@@ -19,8 +20,8 @@ body {
 
 .main {
 
-    height: 690px;
-    background-size: max(1000px, 100vw);
+    height: 100vh;
+    background-size: max(1533px, 100vw);
 
     position: relative;
     background-image: url(assests/images/background.jpg);
@@ -33,7 +34,7 @@ body {
 }
 
 .box1 {
-    height: 690px;
+    height: 100vh;
     width: 100%;
     position: absolute;
     top: 0;
@@ -56,7 +57,8 @@ nav {
     flex-wrap: nowrap;
 }
 
-nav button:nth-child(1),.last_butn {
+nav button:nth-child(1),
+.last_butn {
 
     width: 129px;
     padding: 7px;
@@ -76,7 +78,9 @@ nav button:nth-child(1),.last_butn {
 }
 
 button img,
-.movieslist div img, .question img, .button3 img {
+.movieslist div img,
+.question img,
+.button3 img {
     filter: brightness(0) invert(1);
 }
 
@@ -98,32 +102,53 @@ nav button:nth-child(2) {
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+    text-align: center;
 
 
 }
 
-.text p:nth-child(1),
-.text p:nth-child(2) {
+.text p:nth-child(1) {
     font-weight: 700;
     font-size: 42px;
+    justify-content: center;
+    width: 46%;
+}
 
+
+@media screen and (max-width:953px) {
+    .text p:nth-child(1) {
+        width: auto;
+
+    }
 
 }
 
 
+
+
+
+.text p:nth-child(2),
 .text p:nth-child(3),
-.text p:nth-child(4),
-.text p:nth-child(5) {
+.text p:nth-child(4) {
     font-size: 15px;
     font-weight: 100;
 }
 
-.text p:nth-child(4) {
+.text p:nth-child(3) {
     padding-top: 20px;
 }
 
 .btn2 {
     margin-top: 20px;
+}
+
+@media screen and (max-width:953px) {
+    .btn2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 .btn2 button:nth-child(1) {
@@ -142,6 +167,7 @@ nav button:nth-child(2) {
 
 }
 
+
 .btn2 button:nth-child(2) {
     justify-content: center;
     gap: 10px;
@@ -152,7 +178,7 @@ nav button:nth-child(2) {
     border-radius: 5px;
     background-color: var(--red-color);
     border-color: var(--red-color);
-    
+
     border-width: 0.05px;
     font-size: 16px;
     font-weight: bold;
@@ -160,13 +186,14 @@ nav button:nth-child(2) {
 }
 
 .arc {
+    overflow: hidden;
     width: calc(100% + 60px);
     height: 80px;
     margin-left: -30px;
     border-top: 5px solid #a42229;
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    box-shadow:inset -19px 20px 63px -34px #5166bf;
-    
+    border-radius: 45% 45% 0 0 / 61% 61% 0 0;
+    box-shadow: inset -19px 20px 63px -34px #5166bf;
+
 
 
 }
@@ -175,7 +202,7 @@ nav button:nth-child(2) {
     flex-direction: column;
     gap: 20px;
     padding-top: 10px;
-
+    position: relative;
     color: white;
     width: 85vw;
     margin: auto;
@@ -188,7 +215,7 @@ nav button:nth-child(2) {
 .movies p:nth-child(1) {
     font-weight: 600;
     font-size: x-large;
-    
+
 }
 
 .movies p:nth-child(3) {
@@ -217,14 +244,34 @@ nav button:nth-child(2) {
 
 .numbers {
     right: 159px;
-    left: -10px;
+    left: -41px;
     gap: 110px;
-    top: 916px;
+    top: 163px;
     position: absolute;
     align-items: center;
     justify-content: center;
     width: 80vw;
     margin: auto;
+}
+
+@media screen and (max-width:925px) {
+    .movieslist img {
+        height: 100px;
+    }
+
+    .arrow img {
+        height: 20px;
+    }
+
+    .numbers{
+    left: 9px;
+    
+    top: 95px;
+    }
+
+    .numbers img{
+        height: 40px;
+    }
 }
 
 .grid {
@@ -238,12 +285,20 @@ nav button:nth-child(2) {
     gap: 15px;
 }
 
+@media screen and (max-width:953px) {
+    .grid {
+        grid-template-columns: auto;
+
+    }
+
+}
+
 .grid div {
     position: relative;
     border-radius: 20px;
     background: linear-gradient(148deg, #232254, #2a000073);
     height: 194px;
-    
+
 }
 
 .grid img {
@@ -263,21 +318,22 @@ nav button:nth-child(2) {
 
 }
 
-.question_container{
+.question_container {
     padding-top: 73px;
     margin: auto;
     width: 85vw;
     flex-direction: column;
 }
-.question_container p{
+
+.question_container p {
     font-weight: 600;
     font-size: x-large;
     color: white;
     padding-bottom: 10px;
 }
 
-.question{
-    
+.question {
+
     font-size: 25px;
     padding-right: 20px;
     padding-left: 20px;
@@ -288,7 +344,7 @@ nav button:nth-child(2) {
     color: white;
 }
 
-.container4{
+.container4 {
     gap: 17px;
     padding-top: 90px;
     justify-content: center;
@@ -299,11 +355,19 @@ nav button:nth-child(2) {
     flex-direction: column;
 }
 
-.container4 p:nth-of-type(2){
+.container4 p:nth-of-type(2) {
     color: #a4a2a2;
 }
 
-.email{
+@media screen and (max-width:953px) {
+    .button3 {
+        flex-direction: column;
+        justify-content: center;
+
+    }
+}
+
+.email {
     font-weight: 100;
     background-color: #171616;
     color: #b3afaf;
@@ -317,7 +381,7 @@ nav button:nth-child(2) {
 
 }
 
-.try{
+.try {
     background-color: var(--red-color);
     font-size: 17px;
     font-weight: 600;
@@ -325,47 +389,60 @@ nav button:nth-child(2) {
     width: 227px;
     padding: 13px 0 13px 10px;
     border-radius: 7px;
-    
+
     align-items: center;
     height: 29px;
 
 }
 
-.help_no, .help_no a{
+.help_no,
+.help_no a {
     margin: 65px auto auto auto;
     color: #a4a2a2;
     width: 85vw;
 }
 
-.list{
+.list {
     gap: 16px;
     font-size: 14px;
     flex-direction: column;
 
 }
 
-.container5{
+.container5 {
     padding-top: 50px;
     width: 85vw;
     margin: auto;
     gap: 247px
-
 }
 
-.list a{
+@media screen and (max-width:953px) {
+    .container5 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.list a {
     display: inline-block;
     color: #a4a2a2;
 
 }
 
-.last_butn{
-    
+.last_butn {
+
     margin-top: 61px;
     margin-left: 85px;
 }
 
-.copyright{
-padding-top: 47px;
+@media screen and (max-width:953px) {
+    .last_butn {
+        margin-left: 28px;
+    }
+}
+
+.copyright {
+    padding-top: 47px;
     font-weight: 600;
     font-size: small;
     color: #a4a2a2;
@@ -373,7 +450,7 @@ padding-top: 47px;
     width: 85vw;
 }
 
-.end{
+.end {
     padding: 39px 0 100px 0;
     font-size: smaller;
     color: grey;
